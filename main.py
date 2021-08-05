@@ -13,9 +13,6 @@ from copy import deepcopy
 import glob
 import os
 import aiohttp
-from dotenv import load_dotenv
-
-load_dotenv()
 
 try:
     from discord.ext import commands
