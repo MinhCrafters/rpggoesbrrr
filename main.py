@@ -13,6 +13,9 @@ from copy import deepcopy
 import glob
 import os
 import aiohttp
+from dotenv import load_dotenv
+
+load_dotenv()
 
 try:
     from discord.ext import commands
@@ -23,7 +26,7 @@ except ImportError:
 
 starttime = time.time()
 
-VS = 1.0
+VS = 1.1
 
 config_location = fileIO("config/config.json", "load")
 Shards = config_location["Shards"]
@@ -951,4 +954,4 @@ async def _create_user(author):
     info = fileIO("players/{}/info.json".format(author.id), "load")
 
 
-bot.run(config_location["Token"])
+bot.run(os.getenv('TOKEN'))
